@@ -14,11 +14,9 @@ jobs:
   job2:
     name: Second job
     runs-on: windows-latest
-    steps:
-    - name: Get current date as environment variable
-      run: echo "NOW=$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
+    steps:      
     - name: Echo current date
-      run: echo $NOW
+      run: echo $(Get-Date -format "dd-MMM-yyyy HH:mm:ss")
   job3:
     name: Third job
     runs-on: macos-latest
